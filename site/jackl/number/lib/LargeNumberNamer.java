@@ -34,7 +34,7 @@ public class LargeNumberNamer {
 
 		String toProcessString = number.replaceAll("\\D+", "");
 		
-		if (toProcessString.equals("0"))
+		if (toProcessString.matches("0+"))
 		{
 			print(" zero");
 			System.out.print("\n");
