@@ -29,14 +29,15 @@ public class LargeNumberNamer {
 		
 		if (number.matches("\\D*-.+"))
 		{
-			System.out.print("negative");
+			print("negative");
 		}
 
 		String toProcessString = number.replaceAll("\\D+", "");
 		
 		if (toProcessString.equals("0"))
 		{
-			System.out.println( "zero");
+			print(" zero");
+			System.out.print("\n");
 			return;
 		}
 	
@@ -48,7 +49,7 @@ public class LargeNumberNamer {
 			if (remaining <= 3) {
 				String name = convertLessThanOneThousand(Integer.parseInt(read(toProcess, 3)));
 				if (!name.equals("0")) {
-					System.out.print(name);
+					print(name);
 				}
 
 				unfinished = false;
@@ -60,7 +61,7 @@ public class LargeNumberNamer {
 					
 
 					if (!smallName2.equals("0")) {
-						System.out.print(smallName2 + " " + largeName2);
+						print(smallName2 + " " + largeName2);
 					}
 					
 					break;
@@ -69,7 +70,7 @@ public class LargeNumberNamer {
 					String smallName1 = convertLessThanOneThousand(Integer.parseInt(read(toProcess, 2)));
 					
 					if (!smallName1.equals("0")) {
-						System.out.print (smallName1 + " " + largeName1);
+						print (smallName1 + " " + largeName1);
 
 					}
 					
@@ -80,7 +81,7 @@ public class LargeNumberNamer {
 					
 
 					if (!smallName0.equals("0")) {
-						System.out.print( smallName0 + " " + largeName0);
+						print( smallName0 + " " + largeName0);
 					}
 					
 					break;
@@ -92,7 +93,7 @@ public class LargeNumberNamer {
 					String smallName2 = convertLessThanOneThousand(Integer.parseInt(read(toProcess, 3)));
 					
 					if (!smallName2.equals("0")) {
-						System.out.print( smallName2 + " " + largeName2);
+						print( smallName2 + " " + largeName2);
 					}
 					
 					break;
@@ -101,7 +102,7 @@ public class LargeNumberNamer {
 					String smallName1 = convertLessThanOneThousand(Integer.parseInt(read(toProcess, 2)));
 					
 					if (!smallName1.equals("0")) {
-						System.out.print( smallName1 + " " + largeName1);
+						print( smallName1 + " " + largeName1);
 					}
 					
 					break;
@@ -110,13 +111,14 @@ public class LargeNumberNamer {
 					String smallName0 = convertLessThanOneThousand(Integer.parseInt(read(toProcess, 1)));
 					
 					if (!smallName0.equals("0")) {
-						System.out.print (smallName0 + " " + largeName0);
+						print (smallName0 + " " + largeName0);
 					}
 					
 					break;
 				}
 			}
 		}
+		System.out.print("\n");
 	}
 
 	private static String convertLessThanOneThousand(int number) {
@@ -242,5 +244,23 @@ public class LargeNumberNamer {
 		}
 		remaining -= amount;
 		return new String(buf);
+	}
+	
+	static boolean firstString = true;
+	private static void print(String string)
+	{
+		if (firstString)
+		{
+			if (string.startsWith(" "))
+			{
+				string = string.substring(1);
+			}
+			System.out.print(string);
+			firstString = false;
+		}
+		else
+		{
+			System.out.print(string);
+		}
 	}
 }
