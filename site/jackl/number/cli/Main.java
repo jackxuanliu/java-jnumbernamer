@@ -17,7 +17,7 @@ public class Main {
 			{
 				argsBuilder.append(arg);
 			}
-			System.out.println(LargeNumberNamer.getName(argsBuilder.toString()));
+			LargeNumberNamer.printName(argsBuilder.toString());
 		}
 		else
 		{
@@ -32,7 +32,7 @@ public class Main {
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
-			System.out.println(LargeNumberNamer.getName(builder.toString()));
+			LargeNumberNamer.printName(builder.toString());
 			
 		}
 	}
