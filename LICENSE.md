@@ -1,3 +1,7 @@
+Copyright 2017 [**jackxuanliu**](https://github.com/jackxuanliu)  
+This software is released under the GNU LGPL v3 license and is subject to all of its terms.
+
+--------------------------------------------------------------------------
                    GNU LESSER GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
