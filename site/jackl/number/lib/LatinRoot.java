@@ -14,7 +14,7 @@ class LatinRoot {
 	protected LatinRoot concatenate(LatinRoot rootToJoin) {
 		if (concatenationCharacters != null && rootToJoin.concatenationRequirements != null && !concatenationCharacters.equals("exception")) {
 
-			String[] chars = concatenationCharacters.split("");
+			String[] chars = concatenationCharacters.split("(?<=\\G.)");
 			for (int i = 0; i < chars.length; i++) {
 				if (rootToJoin.concatenationRequirements.contains(chars[i])) {
 					return new LatinRoot(root + chars[i] + rootToJoin.root, rootToJoin.concatenationCharacters,
