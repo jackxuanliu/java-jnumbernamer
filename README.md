@@ -10,6 +10,9 @@ Where $number is equal to the integer you'd like to convert.
 
 Example:
 
+![GIF of java-jnumbernamer in action](res/demo.gif "Usage of java-jnumbernamer")
+
+
     $ java-jnumbernamer 5
     five
 
