@@ -153,7 +153,7 @@ public class LargeNumberNamer {
 			if ((parsed = Integer.parseInt(new StringBuilder(numbersGroup[f]).reverse().toString())) < 10) {
 				finished = finished.concatenate(new LatinRoot(specialPrefixes[parsed], null, null));
 			} else {
-				String[] numbers = numbersGroup[f].split("");
+				String[] numbers = numbersGroup[f].split("(?<=\\G.)");
 				for (int i = 0; i < numbers.length; i++) {
 					LatinRoot root = getRoot((int) ((Integer.parseInt(numbers[i])) * (Math.pow(10, i))));
 					if (root != null) {
