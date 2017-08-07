@@ -2,8 +2,8 @@
 
 #Run as `sudo` to properly install this application.
 
-if [ `whoami` != 'root' ]; then
-  echo "Please try again as root. (i.e. `sudo ./install.sh`)"
+if [ "$EUID" -ne 0 ]; then
+  printf "Please run again as root. (i.e. sudo \'./install.sh\')"
   exit
 fi
 
